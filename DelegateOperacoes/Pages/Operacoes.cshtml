@@ -1,0 +1,31 @@
+﻿@page
+@model DelegateOperacoes.Pages.OperacoesModel
+@{
+ ViewData["Title"] = "Operações com Delegate";
+}
+
+<h2>Operações com Delegate</h2>
+
+<form method="post">
+<div>
+   <label for="Numero1">Digite o primeiro número:</label>
+    <input type="number" asp-for="Numero1" required />
+</div>
+<div>
+ <label for="Numero2">Digite o segundo número:</label>
+ <input type="number" asp-for="Numero2" required />
+ </div>
+<div>
+  <label for="OperacaoEscolhida">Escolha a operação:</label>
+  <select asp-for="OperacaoEscolhida">
+     <option value="Soma">Soma</option>
+     <option value="Subtracao">Subtração</option>
+     <option value="Multiplicacao">Multiplicação</option>
+   </select>
+  </div>
+ <button type="submit">Calcular</button>
+</form>
+@if (!string.IsNullOrEmpty(Model.Mensagem))
+{
+    <p>@Model.Mensagem</p>
+}
